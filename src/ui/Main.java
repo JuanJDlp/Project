@@ -37,8 +37,8 @@ public class Main {
 					+ "\n---Projects---\n" +
 
 					"\n1. Create a project " +
-					"\n2. End a project phase" +
-					"\n3. Register a capsule " +
+					"\n2. Search project after date" +
+					"\n3. Search project before date " +
 					"\n\n11. SALIR DEL PROGRAMA");
 			System.out.print("\n>> ");
 			option = validateIntegerInput();
@@ -76,10 +76,24 @@ public class Main {
 		switch (option) {
 
 			case 1:
-				if (driver.getFirtsValidPosition() == -2) {
+				if (controller.getFirtsValidPosition() == -2) {
 					System.out.println("You can't craete more projects, the projects are full.");
 				} else {
-					createProject();
+					RegisterProject();
+				}
+				break;
+			case 2:
+				if (controller.getProjects()[0] != null) {
+					searchProjectsAfterDate();
+				} else {
+					System.out.println("\nThere is no current projects.\n");
+				}
+				break;
+			case 3:
+				if (controller.getProjects()[0] != null) {
+					searchProjectsBeforeDate();
+				} else {
+					System.out.println("\nThere is no current projects.\n");
 				}
 				break;
 			default:

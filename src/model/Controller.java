@@ -10,16 +10,20 @@ public class Controller {
 	public Controller() {
 
 		projects = new Project[10];
-	
+
 	}
-	
-	//Incomplete
+
+	public Project[] getProjects() {
+		return projects;
+	}
+
+	// Incomplete
 	public boolean RegisterProject() {
 
 		return false;
 	}
 
-	//Incomplete
+	// Incomplete
 	// Date class also has their own before() and after() method
 	public String searchProjectsAfterDate() {
 
@@ -28,8 +32,7 @@ public class Controller {
 		return msg;
 
 	}
-	
-	//Incomplete
+
 	// Date class also has their own before() and after() method
 	public String searchProjectsBeforeDate() {
 
@@ -37,5 +40,17 @@ public class Controller {
 
 		return msg;
 
+	}
+
+	public int getFirtsValidPosition() {
+		boolean isFound = false; // flag
+		int pos = -1;
+		for (int i = 0; i < 10 && !isFound; i++) {
+			if (projects[i] == null) {
+				isFound = true;
+				pos = i;
+			}
+		}
+		return pos;
 	}
 }
