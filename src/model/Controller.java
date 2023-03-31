@@ -62,12 +62,12 @@ public class Controller {
 		String msg = "";
 		Calendar date = stringToCalendar(projectDate);
 		for (int i = 0; i < Math.abs(getFirtsValidPosition()); i++) {
-			if (projects[i].getFinalDate().compareTo(date) < 0) {
+			if (projects[i].getInitialDate().compareTo(date) > 0) {
 				msg += "\n" + projects[i].getProjectInfo();
 			}
 		}
 		if (msg.equalsIgnoreCase("")) {
-			msg = "Threre is not a project that starts before this date";
+			msg = "Threre is not a project that starts after this date";
 		}
 		return msg;
 
@@ -93,12 +93,12 @@ public class Controller {
 		String msg = "";
 		Calendar date = stringToCalendar(projectDate);
 		for (int i = 0; i < Math.abs(getFirtsValidPosition()); i++) {
-			if (projects[i].getInitialDate().compareTo(date) > 0) {
+			if (projects[i].getFinalDate().compareTo(date) < 0) {
 				msg += "\n" + projects[i].getProjectInfo();
 			}
 		}
 		if (msg.equalsIgnoreCase("")) {
-			msg = "Threre is not a project that starts before this date";
+			msg = "Threre is not a project that ends before this date";
 		}
 		return msg;
 

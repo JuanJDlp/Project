@@ -45,7 +45,7 @@ public class Main {
 
 					"\n1. Create a project " +
 					"\n2. Search a project that ends before a date" +
-					"\n3. Search a project that start before a date" +
+					"\n3. Search a project that start after a date" +
 					"\n\n4. Exit the program");
 			System.out.print("\n>> ");
 			option = validateIntegerInput();
@@ -160,14 +160,14 @@ public class Main {
 				break;
 			case 2:
 				if (controller.getProjects()[0] != null) {
-					searchProjectsAfterDate();
+					searchProjectsBeforeDate();
 				} else {
 					System.out.println("\nThere is no current projects\n");
 				}
 				break;
 			case 3:
 				if (controller.getProjects()[0] != null) {
-					searchProjectsBeforeDate();
+					searchProjectsAfterDate();
 				} else {
 					System.out.println("\nThere is no current projects\n");
 				}
