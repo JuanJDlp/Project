@@ -11,7 +11,7 @@ public class Controller {
 
 	public Controller() {
 
-		projects = new Project[2];
+		projects = new Project[10];
 
 	}
 
